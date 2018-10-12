@@ -1,0 +1,29 @@
+{
+  "name": "node-mongo-rest-auth",
+  "version": "1.0.0",
+  "description": "Boilerplate for basic auth using Node, mongo and JWT",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/kim3z/node-mongo-rest-auth.git"
+  },
+  "keywords": [
+    "node",
+    "rest",
+    "api",
+    "mongo",
+    "jwt"
+  ],
+  "author": "Kim Lehtinen",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/kim3z/node-mongo-rest-auth/issues"
+  },
+  "homepage": "https://github.com/kim3z/node-mongo-rest-auth#readme",
+  "dependencies": {
+    "express": "^4.16.4"
+  }
+}
