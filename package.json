@@ -4,8 +4,10 @@
   "description": "Boilerplate for basic auth using Node, mongo and JWT",
   "main": "server.js",
   "scripts": {
+    "lint": "eslint *.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
+  "pre-commit": "lint",
   "repository": {
     "type": "git",
     "url": "git+https://github.com/kim3z/node-mongo-rest-auth.git"
@@ -32,6 +34,10 @@
     "multer": "^1.3.0"
   },
   "devDependencies": {
-    "nodemon": "^1.12.1"
+    "eslint": "^5.7.0",
+    "eslint-config-airbnb-base": "^13.1.0",
+    "eslint-plugin-import": "^2.14.0",
+    "nodemon": "^1.12.1",
+    "pre-commit": "^1.2.2"
   }
 }
