@@ -1,5 +1,9 @@
 # node-mongo-rest-auth
-A boilerplate for basic authentication using Node JS, MongoDB and JWT.
+A boilerplate for basic authentication nodeJS app.
+
+## Built With
+
+[<img src="https://raw.githubusercontent.com/gilbarbara/logos/master/logos/nodejs.svg?sanitize=true" height="100" width="100">](https://nodejs.org/en/) [<img src="https://raw.githubusercontent.com/gilbarbara/logos/master/logos/mongodb.svg?sanitize=true" height="100" width="100">](https://www.mongodb.com/) [<img src="https://raw.githubusercontent.com/gilbarbara/logos/master/logos/docker.svg?sanitize=true" height="100" width="100">](https://www.docker.com/)
 
 ## Getting Started
 
@@ -29,10 +33,6 @@ TODO
 ## Deployment
 
 TODO
-
-## Built With
-
-[<img  src="https://raw.githubusercontent.com/gilbarbara/logos/master/logos/nodejs.svg?sanitize=true" height="100" width="100">](https://nodejs.org/en/)[<img src="https://raw.githubusercontent.com/gilbarbara/logos/master/logos/mongodb.svg?sanitize=true" height="100" width="100">](https://www.mongodb.com/)[<img  src="https://raw.githubusercontent.com/gilbarbara/logos/master/logos/docker.svg?sanitize=true" height="100" width="200">](https://www.docker.com/)
 
 ## Authors
 
