@@ -1,5 +1,6 @@
 {
     "env": {
-        "JWT_KEY": "secret"
+        "JWT_KEY": "secret",
+        "DB_URL": "localhost"
     }
 }

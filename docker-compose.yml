@@ -1,15 +1,24 @@
 version: '2'
 services:
-    mongodb:
-        image: mongo:latest
-        container_name: "mongodb"
-        environment:
-            - MONGO_DATA_DIR=/data/db
-            - MONGO_LOG_DIR=/dev/null
-            #- MONGODB_USER="foo"
-            #- MONGODB_PASS="bar"
-        volumes:
-            - ./data/db:/data/db
-        ports:
-            - 27017:27017
-        command: mongod --smallfiles --logpath=/dev/null
+  app:
+    environment:
+      - JWT_KEY=secret
+      - DB_URL=db
+    restart: always
+    build: .
+    ports:
+      - 3000:3000
+    depends_on:
+    - db
+  db:
+    image: mongo:latest
+    environment:
+      - MONGO_DATA_DIR=/data/db
+      - MONGO_LOG_DIR=/dev/null
+      #- MONGODB_USER="foo"
+      #- MONGODB_PASS="bar"
+    volumes:
+      - ./data/db:/data/db
+    ports:
+      - 27017:27017
+    command: mongod --smallfiles --logpath=/dev/null

@@ -6,12 +6,18 @@ const morgan = require('morgan');
 const bodyParser = require('body-parser');
 const mongoose = require('mongoose');
 const userRoutes = require('./routes/user');
+const homeRoutes = require('./routes/home');
 
 const port = process.env.PORT || 3000;
 const server = http.createServer(app);
 
+/*
+  In order to connect to mongodb we use an environment variable called DB_URL.
+  In dev mode it uses the value given in nodemon.json.
+  In production it uses the value given in docker-compose.yml.
+*/
 mongoose.connect(
-  'mongodb://localhost:27017/example-app', { useCreateIndex: true, useNewUrlParser: true },
+  `mongodb://${process.env.DB_URL}:27017/example-app`, { useCreateIndex: true, useNewUrlParser: true },
 );
 mongoose.Promise = global.Promise;
 
@@ -37,6 +43,7 @@ app.use((req, res, next) => {
 });
 
 // API routes
+app.use('/', homeRoutes);
 app.use('/user', userRoutes);
 
 app.use((req, res, next) => {
