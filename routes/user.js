@@ -88,7 +88,7 @@ router.post('/login', (req, res) => {
     });
 });
 
-router.delete('/:user_id', (req, res) => {
+router.delete('/delete/:user_id', (req, res) => {
   User.remove({ _id: req.params.user_id }).exec().then(() => {
     res.status(200).json({
       message: 'User was successfully deleted',

@@ -1,17 +1,52 @@
+
 # node-mongo-rest-auth
-A boilerplate for basic authentication nodeJS app.
+
+A boilerplate for a basic restful node.js app with authentication.
+
+# Table of Contents
+1. [Features](#features)
+2. [Built with](#built-with)
+3. [Getting Started](#getting-started)
+4. [Deploy with Docker Compose](#deploy-with-docker-compose)
+
+## Features
+- jwt authentication
+- signup and login
+- middleware to protect endpoints that can only be used if user is logged in
+- deployment using Docker
 
 ## Built With
 
 [<img src="https://raw.githubusercontent.com/gilbarbara/logos/master/logos/nodejs.svg?sanitize=true" height="100" width="100">](https://nodejs.org/en/) [<img src="https://raw.githubusercontent.com/gilbarbara/logos/master/logos/mongodb.svg?sanitize=true" height="100" width="100">](https://www.mongodb.com/) [<img src="https://raw.githubusercontent.com/gilbarbara/logos/master/logos/docker.svg?sanitize=true" height="100" width="100">](https://www.docker.com/)
 
-## Getting Started
+  
 
+## Getting Started
 Follow the instructions in order to clone the repository and to get it up and running on your local machine. Look at deployment for instructions on how to deploy using docker.
 
-### Installing
+### Local development/setup
+First make sure that you have installed [mongodb](https://www.mongodb.com/) and that it is running on "localhost:27017".
 
 Clone this repo
+```
+git clone https://github.com/kim3z/node-mongo-rest-auth.git
+```
+Cd into app folder
+```
+cd node-mongo-rest-auth
+```
+Install dependencies
+```
+npm install
+```
+Start the application locally
+```
+nodemon server.js
+```
+
+## Deploy with Docker Compose
+
+For deployment make sure that you have installed both [Docker](https://www.docker.com/get-started) and [docker-compose](https://docs.docker.com/compose/install/) on your machine.
 
 ```
 git clone https://github.com/kim3z/node-mongo-rest-auth.git
@@ -19,30 +54,26 @@ git clone https://github.com/kim3z/node-mongo-rest-auth.git
 ```
 cd node-mongo-rest-auth
 ```
-
-Install dependencies
-
 ```
-npm install
+docker-compose up -d
 ```
+## Example endpoints
+routes/home.js:
+- ``/`` index endpoint
+- ``/admin`` example endpoint that requires user is logged in
 
-## Running the tests
+routes/user.js:
+- ``/user/signup`` for creating a new user
+- ``/user/login`` for login
+- ``/user/delete/:user_id`` for deleting a user
+- ``/user/list/all`` for listing all user
 
-TODO
+## How authentication works 
 
-## Deployment
+Each time a user logs in the user gets a JWT token. When the client sends a request to the REST API the request needs to contain an Authorization key in the headers. The value of the key should be "token: thesecretjwttoken". The middleware splits the key value by space and checks if "thesecretjwttoken" is valid.
 
-TODO
-
-## Authors
-
-* **Kim Lehtinen** - *Initial work* - [kim3z](https://github.com/kim3z)
-
-## License
-
-This project is licensed under the MIT License - see the [LICENSE.md](LICENSE.md) file for details
+Right now each JWT token expires in one hour. This can be changed in routes/user.js.
 
 ## Acknowledgments
 
-* [Academind](https://github.com/academind) - Node JS tutorials
-* [PurpleBooth](https://github.com/PurpleBooth) - README template
+*  [Academind](https://github.com/academind) - Thank you for awesome Node JS tutorials
