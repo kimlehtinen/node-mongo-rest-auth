@@ -101,4 +101,16 @@ router.delete('/:user_id', (req, res) => {
     });
 });
 
+router.get('/list/all', (req, res) => {
+  User.find({}, (err, users) => {
+    const userMap = {};
+
+    users.forEach((user) => {
+      userMap[user._id] = user;
+    });
+
+    res.send(userMap);
+  });
+});
+
 module.exports = router;
