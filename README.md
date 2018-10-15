@@ -8,6 +8,9 @@ A boilerplate for a basic restful node.js app with authentication.
 2. [Built with](#built-with)
 3. [Getting Started](#getting-started)
 4. [Deploy with Docker Compose](#deploy-with-docker-compose)
+5. [Example endpoints](#example-endpoints)
+6. [How authentication works](#how-authentication-works)
+7. [Acknowledgments](#acknowledgments)
 
 ## Features
 - jwt authentication
@@ -55,7 +58,7 @@ git clone https://github.com/kim3z/node-mongo-rest-auth.git
 cd node-mongo-rest-auth
 ```
 ```
-docker-compose up -d
+sudo docker-compose up -d
 ```
 ## Example endpoints
 routes/home.js:
