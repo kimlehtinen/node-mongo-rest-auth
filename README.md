@@ -2,6 +2,7 @@
 # node-mongo-rest-auth
 
 A boilerplate for a basic restful node.js app with authentication.
+Since this project is new please tell me if you notice any issues or if you want me to explain how something works!
 
 # Table of Contents
 1. [Features](#features)
@@ -42,10 +43,15 @@ Install dependencies
 ```
 npm install
 ```
-Start the application locally
+Start the application locally like this if you have [nodemon](https://www.npmjs.com/package/nodemon) installed (recommended)
 ```
 nodemon server.js
 ```
+If you don't want to install nodemon you can start it with node like this:
+```
+node server.js
+```
+Now this app should be listening on ``localhost:3000``.
 
 ## Deploy with Docker Compose
 
@@ -60,6 +66,8 @@ cd node-mongo-rest-auth
 ```
 sudo docker-compose up -d
 ```
+If everything worked the app should return a JSON message on ``http://yourmachineipaddress:3000`` or ``http://yourdomain.something:3000`` if you have a domain pointing to it.
+
 ## Example endpoints
 routes/home.js:
 - ``/`` index endpoint
@@ -69,7 +77,7 @@ routes/user.js:
 - ``/user/signup`` for creating a new user
 - ``/user/login`` for login
 - ``/user/delete/:user_id`` for deleting a user
-- ``/user/list/all`` for listing all user
+- ``/user/list/all`` for listing all users
 
 ## How authentication works 
 
